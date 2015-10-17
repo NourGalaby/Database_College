@@ -68,43 +68,6 @@
                             <div class="description">
                             	<p>
 	                            	
-<?php 
-session_start(); 
-include("connect.php");
-
-$username = $_POST["form-first-name"];
-$password = $_POST["form-pass"];
-$email= $_POST['form-email'];
-
-
-
-if ($mysqli->connect_errno) {
-    printf("Connect failed: %s\n", $mysqli->connect_error);
-    exit();
-}
-if(mysqli_query($mysqli,"INSERT INTO students (username,password,email) VALUES('$username','$password','$email')")==TRUE ){
-
-echo "registration successful !!";
-
-
-
- echo "<br>  <br> You will be redirirected to the welcome page in 3 secounds  <br> ";
- echo ' <meta http-equiv="refresh" content="3;url=welcome.php?form-first-name='.$username.'>" />';
-
-}else {
-
-echo "registration Failed. The user name maybe taken";
-
- echo "<br>  <br> You will be redirirected to the main page in 3 secounds  <br> ";
- echo ' <meta http-equiv="refresh" content="3;url=lab1.html" />';
-
-}
-
-   
-mysqli_close($mysqli);
-
-
- ?>
                             	</p>
                             </div>
                         </div>

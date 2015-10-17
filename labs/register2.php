@@ -46,7 +46,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="../index.html">Home</a>
+					<h1 class="navbar-brand" href="../index.html">Home</h1>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -64,7 +64,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h3><strong>Lab1</strong> TITLE</h3>
+                            <h3><strong></strong> REGESITRATION COMPLETE</h3>
                             <div class="description">
                             	<p>
 	                            	
