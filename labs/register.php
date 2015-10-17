@@ -64,7 +64,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h3><strong>Lab1</strong> TITLE</h3>
+                      
                             <div class="description">
                             	<p>
 	                            	
@@ -89,7 +89,7 @@ echo "registration successful !!";
 
 
  echo "<br>  <br> You will be redirirected to the welcome page in 3 secounds  <br> ";
- echo ' <meta http-equiv="refresh" content="3;url=welcome.php?form-first-name='.$username.'>" />';
+ echo ' <meta http-equiv="refresh" content="3;url=welcome.php?form-first-name='.$username.'" />';
 
 }else {
 
