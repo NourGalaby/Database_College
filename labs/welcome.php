@@ -64,7 +64,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Welcome</strong> 
+                            <h1>Welcome
                                 <?php 
 $userName= $_GET['form-first-name'];
 echo $userName;
