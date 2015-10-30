@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LAB 1 - WElCOME</title>
+        <title>Registration Complete</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -46,7 +46,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="../index.html">Home</a>
+					<h1 class="navbar-brand" href="../index.html">Home</h1>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -64,16 +64,47 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1>Welcome
-                                <?php 
-$userName= $_GET['form-first-name'];
-echo $userName;
-
-
- ?></h1>
+                            <h3><strong></strong> REGESITRATION COMPLETE</h3>
                             <div class="description">
                             	<p>
 	                            	
+<?php 
+session_start(); 
+include("connect.php");
+
+$username = $_POST["form-first-name"];
+$password = $_POST["form-pass"];
+$email= $_POST['form-email'];
+
+
+
+if ($mysqli->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
+}
+if(mysqli_query($mysqli,"INSERT INTO students (username,password,email) VALUES('$username','$password','$email')")==TRUE ){
+
+echo "registration successful !!";
+
+
+
+ echo "<br>  <br> You will be redirirected to the welcome page in 3 secounds  <br> ";
+ echo ' <meta http-equiv="refresh" content="3;url=welcome.php?form-first-name='.$username.'>" />';
+
+}else {
+
+echo "registration Failed. The user name maybe taken";
+
+ echo "<br>  <br> You will be redirirected to the main page in 3 secounds  <br> ";
+ echo ' <meta http-equiv="refresh" content="3;url=lab1.html" />';
+
+}
+
+   
+mysqli_close($mysqli);
+
+
+ ?>
                             	</p>
                             </div>
                         </div>

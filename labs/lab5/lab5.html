@@ -6,14 +6,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>LAB 1</title>
+        <title>LAB 5</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../assets/css/form-elements.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,29 +23,33 @@
         <![endif]-->
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="shortcut icon" href="../assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
 
 
 
 <script type="text/javascript">
+
+
+
 function foo() {
 
-   
 
+  // alert("edelo");
    var email = document.getElementById('form-email');
-
    var filter = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
+  // alert("edelo22");
+
     if (!filter.test(email.value)) {
     alert('Please provide a valid email address');
     email.focus;
     return false;
 
     }
-var pass= document.getElementById('password');
+var pass= document.getElementById('form-pass');
 //alert(pass.value);
     if(pass.value== ""){
         alert('Please enter your password');
@@ -73,7 +77,7 @@ var pass= document.getElementById('password');
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="../index.html">Home</a>
+					<a class="navbar-brand" href="../../index.html">Home</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="top-navbar-1">
@@ -91,7 +95,7 @@ var pass= document.getElementById('password');
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Lab1</strong> Registration Form</h1>
+                            <h1><strong>Lab5</strong> Registration Form</h1>
                             <div class="description">
                             	<p>
 	                            	
@@ -124,28 +128,67 @@ var pass= document.getElementById('password');
     
                                            <div class="form-group">
                                         <label class="sr-only" for="form-pass">Password</label>
-                                        <input type="password" name="form-pass" placeholder="Password.." class="form-password form-control" id="password">
+                                        <input type="password" name="form-pass" placeholder="Password.." class="form-password form-control" id="form-pass">
                                     </div>
 			                        <button type="button" class="btn" onclick="foo();" >Sign me up!</button>
+									
+									
 			                    </form>
+								
+								
+								
+								
 		                    </div>
+							<div class="text">
+							<h1>	Already Registered? </h1></div>
+						
+						
+							<div class="form-bottom">
+                        		<div class="form-top-left">
+                        			<h3>Login</h3>
+                            		<p>Fill in the form below:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-pencil"></i>
+                        		</div>
+                            </div>
+							 <div class="form-bottom">
+			                    <form id="myform2" role="form" action="login.php" method="post" class="registration-form">
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="form-first-name">First name</label>
+			                        	<input type="text" name="form-first-name" placeholder="Username..." class="form-first-name form-control" id="login_username">
+			                        </div>
+			                     
+    
+                                           <div class="form-group">
+                                        <label class="sr-only" for="form-pass">Password</label>
+                                        <input type="password" name="form-pass" placeholder="Password.." class="form-password form-control" id="login_password">
+                                    </div>
+			                        <button type="button" class="btn" onclick="login_verf();" >Login</button>
+									
+									
+			                    </form>
+								
+								
+		                    </div>
+							  
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>	
             
         </div>
 
 
         <!-- Javascript -->
-        <script src="assets/js/jquery-1.11.1.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/retina-1.1.0.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
+        <script src="../assets/js/jquery-1.11.1.min.js"></script>
+        <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery.backstretch.min.js"></script>
+        <script src="../assets/js/retina-1.1.0.min.js"></script>
+        <script src="scripts.js"></script>
         
         <!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
+            <script src="../assets/js/placeholder.js"></script>
         <![endif]-->
 
     </body>
