@@ -82,7 +82,7 @@ if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-if(mysqli_query($mysqli,"INSERT INTO students (username,password,email) VALUES('$username','$password','$email')")==TRUE ){
+if(mysqli_query($mysqli,"INSERT INTO students (username,password,email) VALUES('$username',md5('$password'),'$email')")==TRUE ){
 
 echo "registration successful !!";
 
