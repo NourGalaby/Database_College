@@ -67,16 +67,31 @@
                             <h1>Welcome
                                 <?php 
                                 session_start();
+                                include("connect.php");
+
 $userName= $_SESSION['username'];
 echo $userName;
  ?></h1>
 
+<h3>        
 <?php 
 
-$sql = "SELECT id, firstname, lastname FROM MyGuests";
-$result = mysqli_query($conn, $sql);
- ?>                            
+$dep =$_SESSION['dep'];
+$sql = "SELECT * FROM `course` WHERE `department_id` =$dep";
+$result = mysqli_query($mysqli, $sql);
 
+if ($result->num_rows > 0) {
+     // output data of each row
+     while($row = $result->fetch_assoc()) {
+         echo "<br> id: ". $row["course_id"]. " - Course Name: ". $row["course_name"]. " Course description:" . $row["course_description"] . "<br>";
+     }
+} else {
+     echo "0 results";
+}
+
+
+ ?>                            
+</h3>
 
 
         <!-- Javascript -->
