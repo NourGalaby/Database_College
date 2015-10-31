@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php 
+
+$username = $_POST["login_username"];
+$password = $_POST["login_password"];
+ ?>
 <html lang="en">
 
     <head>
@@ -64,7 +68,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h3><strong>Lab1</strong> TITLE</h3>
+                           
                             <div class="description">
                             	<p>
 	                            	
@@ -74,17 +78,50 @@
 
 session_start(); 
 include("connect.php");
-$username = $_POST["login_username"];
-$password = $_POST["login_password"];
+
 
 if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
-if(mysqli_query($mysqli,"SELECT * FROM `user` WHERE `username` = $username")==TRUE ){
+$result =mysqli_query($mysqli,"SELECT * FROM `user` WHERE `username` = '$username'");
 
-    echo "username found";
+
+if (mysqli_num_rows($result) > 0) {
+$row = mysqli_fetch_assoc($result); 
+
+
+     if(  $row["password"] === md5($password) ){
+        echo " Success";
+
+        if($row["department_id"]>0){
+            //chosen dep
+             echo "<br>  <br> You will be redirirected to the courses page in 3 secounds  <br> ";
+ echo ' <meta http-equiv="refresh" content="3;url=courses.php" />';
+}else{
+//not chosen
+  echo "<br>  You Have not chosen a department yet, You will be redirirected <br> ";
+   echo ' <meta http-equiv="refresh" content="3;url=welcome.php" />';
 }
+     }else{
+        echo "wrong password";
+     }
+
+
+
+}else{
+
+    echo "Wrong User name or password";
+
+     echo "<br>  <br> You will be redirirected to the main page in 3 secounds  <br> ";
+ echo ' <meta http-equiv="refresh" content="3;url=lab5.html" />';
+
+}
+
+
+
+
+
                                      ?>
                             	</p>
                             </div>

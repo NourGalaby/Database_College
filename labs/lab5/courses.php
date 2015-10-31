@@ -89,7 +89,7 @@ if ($result->num_rows > 0) {
      echo "0 results";
 }
 
-
+mysqli_close($mysqli);
  ?>                            
 </h3>
 
